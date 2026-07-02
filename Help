@@ -1,0 +1,113 @@
+describe('Google Search Test', () => {
+ it('should open google and verify title', async () => {
+ await browser.url('https://www.google.com');
+ const title = await browser.getTitle();
+ console.log("Page Title is: " + title);
+ });
+});
+
+----------------------
+
+
+
+describe('xpath locator test',()=>{
+    it('should locate elements by using xpath',async()=>{
+        await browser.url('https://www.website.com/sign-in/?source=SC&country=IN');
+        const username=await $('//input[@id="username"]');
+        await username.setValue('mit');
+
+        const password=await $('//input[@id="password"]');
+        await password.setValue('mitm');
+
+        const loginBtn=await $('//button[@id="signin-submit2"]');
+        await loginBtn.click();
+
+    });
+});
+
+------------------------------
+
+package com.example;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello Maven!");
+    }
+}
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>MyProject</artifactId>
+    <version>1.0</version>
+
+</project>
+
+----------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Manager</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h2>Task Manager</h2>
+  <input type="text" id="taskInput" placeholder="Enter a task">
+  <button id="addTask">Add Task</button>
+
+  <h3>Tasks:</h3>
+  <ul id="taskList"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+## ?? Step 4: Add jQuery Logic
+Create a new file in the same folder called `script.js` and paste:
+
+```javascript
+$(document).ready(function(){
+  $("#addTask").click(function(){
+    let task = $("#taskInput").val();
+    if(task){
+      $("#taskList").append("<li>" + task + " <button class='remove'>Remove</button></li>");
+      $("#taskInput").val(""); 
+    }
+  });
+
+  $(document).on("click", ".remove", function(){
+    $(this).parent().remove();
+  });
+
+  function getTasks(){
+    let tasks = [];
+    $("#taskList li").each(function(){
+      tasks.push($(this).text().replace(" Remove",""));
+    });
+    return tasks;
+  }
+
+  $("#taskList").on("DOMSubtreeModified", function(){
+    console.log("Current Tasks:", getTasks());
+  });
+});
+
+--------------------------------
+
+echo "pipeline{agent any;{stages{stage('checkout')steps{git branch='main',url='https://github.com/username/reponame',credentialId='your_credential_id'}}}}">Jenkinsfile
+
+---------------------------
+
+def test_example():
+   assert 1+1==2
