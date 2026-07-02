@@ -1,0 +1,47 @@
+ Steps to Fork (on GitHub)
+1. Open any repository.
+2. Click Fork (top right).
+3. A copy will be created under your account.
+Example:
+Original repo → github.com/originaluser/project
+Forked repo → github.com/yourusername/project
+ Clone the Forked Repository
+git clone https://github.com/yourusername/project.git
+cd project
+ Merge in Git
+ What is Merge?
+Merging combines changes from one branch into another branch.
+ Steps to Merge
+Step 1: Create a new branch
+git checkout -b feature
+Step 2: Make changes and commit
+echo "Feature added" >> file.txt
+git add .
+git commit -m "Added feature"
+Step 3: Switch to main branch
+git checkout main
+Step 4: Merge feature branch
+git merge feature
+DEVOP’S [M23BCS607B]
+DEPT. OF CE, MITM. 9
+ Result:
+Changes from feature branch are now merged into main.
+ Merge Conflict
+ What is a Merge Conflict?
+A merge conflict occurs when:
+• Two branches modify the same line of a file.
+• Git cannot decide which change to keep.
+ Example Conflict
+If both branches modify the same line:
+<<<<<<< HEAD
+Hello from main branch
+=======
+Hello from feature branch
+>>>>>>> feature
+ Steps to Resolve Conflict
+1. Open the file.
+2. Remove conflict markers.
+3. Edit the file manually.
+4. Add and commit.
+git add file.txt
+git commit -m "Resolved merge conflict"
