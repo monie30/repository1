@@ -1,0 +1,58 @@
+Microsoft Windows [Version 10.0.26200.8457]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git init
+Initialized empty Git repository in C:/Users/CHINMAYI C/OneDrive/Desktop/project 1/.git/
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git branch -M main
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git add .
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git commit -m "Initial commit"
+On branch main
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git remote add origin https://github.com/chinmayic77-sys/My-project-1
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>echo "# My project"> README.md
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git add README.md
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git commit -m "Add README"
+[main (root-commit) 168b1d0] Add README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git push -u origin main
+To https://github.com/chinmayic77-sys/My-project-1
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/chinmayic77-sys/My-project-1'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git remote -v
+origin  https://github.com/chinmayic77-sys/My-project-1 (fetch)
+origin  https://github.com/chinmayic77-sys/My-project-1 (push)
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git remote -v
+origin  https://github.com/chinmayic77-sys/My-project-1 (fetch)
+origin  https://github.com/chinmayic77-sys/My-project-1 (push)
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>echo pipeline { agent any; stages { stage('Checkout') { steps { git branch: 'main', url: ' https://github.com/chinmayic77-sys/My-project-1' } } } }
+pipeline { agent any; stages { stage('Checkout') { steps { git branch: 'main', url: ' https://github.com/chinmayic77-sys/My-project-1' } } } }
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git add Jenkinsfile
+fatal: pathspec 'Jenkinsfile' did not match any files
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git commit -m "Add Jenkinsfile"
+On branch main
+nothing to commit, working tree clean
+
+C:\Users\CHINMAYI C\OneDrive\Desktop\project 1>git push -m origin main
+
